@@ -1,0 +1,191 @@
+
+/* || Variables */
+
+:root {
+
+  /* Theme Colors */
+  --PRIMARY: #ff4d00;
+  --SECONDARY: #f59d1a;
+  --QUARTILE: #ff8800;
+  --TERTIARY: #6c6969;
+  --LIGHTEST: #fff;
+  --LIGHT: #e4e4e4;
+  --LIGHT-SECONDARY: #bebebe;
+  --LIGHT-TERTIARY: #a5a5a5;
+  --DARKEST: #000;
+  --DARK: #272727;
+  --DARK-SECONDARY: #3b3b3b;
+  --DARK-TERTIARY: #585858;
+  --FADED-BGCOLOR: #f3f3f3;
+
+  /* Fonts */
+  --PRIMARY-FONT: Cursive;
+  --FALLBACK-FONT: sans-serif;
+
+  /* Variable APPLICATION */
+  --RIGHT-GRADIENT: var(--PRIMARY);
+  --LEFT-GRADIENT: var(--SECONDARY);
+  --BTN-PRIMARY: var(--PRIMARY);
+  --BTN-SECONDARY: var(--SECONDARY);
+  --BTN-TERTIARY: var(--TERTIARY);
+  --BTN-LIGHT: var(--LIGHT);
+  --BTN-DARK: var(--DARK);
+  --FONT-FAMILY: var(--PRIMARY-FONT), var(--FALLBACK-FONT);
+  --FALLBACK-BGCOLOR: var(--QUARTILE);
+
+}
+
+
+
+*,
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::placeholder{
+  font-family: var(--FONT-FAMILY);
+  color: var(--LIGHT-TERTIARY);
+}
+
+::selection {
+  background-color: var(--SECONDARY);
+  color: var(--LIGHTEST);
+}
+
+img { display: none; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background-color: var(--FALLBACK-BGCOLOR);
+  background-image: linear-gradient(to right, var(--PRIMARY), var(--SECONDARY));
+  padding: 40px 20px;
+  font-family: var(--FONT-FAMILY);
+}
+
+
+
+/* || Pointer SVG */
+
+.bouncing-pointer-container {
+  width: 200px;
+  height: 180px;
+  margin-top: 100px;
+  padding-top: 0;
+  /* border: 1px solid var(--LIGHT); */
+  animation: pointer 1s infinite alternate;
+}
+.bouncing-pointer {
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+}
+.bouncing-pointer polygon {
+  fill: white;
+  stroke: white;
+  stroke-width: 1;
+}
+
+svg {
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+}
+
+
+/* || Defaults */
+.center { text-align: center; }
+.capitalize { text-transform: capitalize; }
+
+
+
+/* || Utilities */
+
+/* Btn Start */
+.btn {
+  border-radius: 20px;
+  padding: 12px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn--light { 
+  background-color: var(--BTN-LIGHT); 
+  color: var(--TERTIARY);
+}
+.btn--light:hover,
+.btn--light:focus-visible { 
+  background-color: var(--BTN-DARK); 
+  color: var(--LIGHT);
+}
+.btn--light:active { 
+  opacity: 0.85;
+}
+
+.btn--dark { 
+  background-color: var(--BTN-DARK); 
+  color: var(--LIGHT);
+}
+.btn--dark:hover,
+.btn--dark:focus-visible { 
+  opacity: 0.85;
+}
+.btn--dark:active { 
+  opacity: 0.6;
+}
+
+.btn--primary { 
+  background-color: var(--BTN-PRIMARY); 
+  color: var(--LIGHT);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible { 
+  opacity: 0.85;
+}
+.btn--primary:active { 
+  opacity: 0.6;
+}
+
+.btn--secondary { 
+  background-color: var(--BTN-SECONDARY); 
+  color: var(--LIGHT);
+}
+.btn--secondary:hover,
+.btn--secondary:focus-visible { 
+  opacity: 0.85;
+}
+.btn--secondary:active { 
+  opacity: 0.6;
+}
+
+.btn--tertiary { 
+  background-color: var(--BTN-TERTIARY); 
+  color: var(--PRIMARY);
+}
+/* Btn End */
+
+.standout {
+  font-weight: 600;
+  text-decoration: underline;
+  color: inherit;
+}
+
+@keyframes pointer {
+  0% {
+    padding-top: 0;
+  }
+
+  100% {
+    padding-top: 3rem;
+  }
+
+}
